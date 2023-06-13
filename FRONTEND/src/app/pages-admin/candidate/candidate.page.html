@@ -1,0 +1,124 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <!-- heder di kosongkan -->
+  </ion-header>
+  <!-- ============== Menu ================== -->
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-avatar>
+          <img class="img" alt="Silhouette of a person's head" src="assets/logo/logoo.png" />
+        </ion-avatar>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content class="ion-padding">
+      <div id="header">
+        <img src="assets\thumb admin.png" alt="">
+      </div>
+      <ion-button fill="clear"(click)="toHome()"><ion-icon slot="start" name="speedometer"></ion-icon>Dasboard</ion-button><br>
+      <ion-button fill="clear" (click)="toPageAddCandidate()"><ion-icon slot="start" name="people"></ion-icon>Data Kandidat</ion-button><br>
+      <ion-button fill="clear" (click)="toPageAddUser()"><ion-icon slot="start" name="person"></ion-icon>Data User</ion-button><br>
+      <ion-button fill="clear" (click)="toPageHasilVote()"><ion-icon slot="start" name="newspaper"></ion-icon>Hasil Voting</ion-button><br>
+      <ion-button fill="clear"  (click)="logout()"><ion-icon slot="start"  name="log-out"></ion-icon>Logout</ion-button>
+  
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-avatar>
+          <img alt="Silhouette of a person's head" src="assets/logo/logoo.png" />
+        </ion-avatar>
+      </ion-toolbar>
+    </ion-header>
+  
+  </div>
+  <br><br><br>
+  <!-- ====/menu -->
+  <!-- ====/menu -->
+  <!-- =====card -->
+  <br>
+  <ion-card *ngFor="let key of kandidat">
+    <img alt="Photo Error" src="\assets\candidate.jpg" />
+
+    <ion-card-header>
+      <!-- <ion-card-subtitle>gozalii dan ijal</ion-card-subtitle> -->
+      <ion-card-title><b>{{key.name}}</b></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>ID Candidate {{key.id}}</p>
+      <br>
+      <h1>Visi : </h1>
+      <br>
+      <p>{{key.vision}}</p>
+      <br>
+      <h1>Misi :</h1>
+      <br>
+      <p>{{key.mission}}</p>
+      <br>
+      <ion-button expand="block" (click)="toPageEdit(key.id)" >Edit</ion-button>
+      <ion-button expand="block" color="danger" (click)="hapus(key.id)">Hapus</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <!-- =====/card -->
+  <!-- =====card -->
+  <!-- =====/card -->
+
+<!-- ===== Button Crud -->
+<!-- <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button>
+    <ion-icon name="chevron-up-circle"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button>
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="pencil"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button >
+      <ion-icon name="add-sharp" (click)="toPageAdd()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab> -->
+
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button size="small">
+    <ion-icon name="add" (click)="toPageAdd()"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>
+
+
+
+    <!-- <ion-card *ngFor="let key of DataUser">
+      <img alt="Silhouette of mountains" src="{{ key.avatar }}" />
+  
+      <ion-card-header> -->
+        <!-- <ion-card-subtitle>gozalii dan ijal</ion-card-subtitle> -->
+        <!-- <ion-card-title>Candidate 0{{ key.id }}</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <h1>VISI MISI</h1>
+        <br>
+        {{ key.visi }}
+        {{ key.misi }}
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, laudantium! Molestias fugiat laboriosam nam labore esse neque, maxime eveniet laborum, ex soluta, harum inventore asperiores odio vitae facere praesentium in.</p>
+        <ion-button expand="block" >Edit</ion-button>
+        <ion-button expand="block" fill="clear" >Edit</ion-button>
+      </ion-card-content>
+    </ion-card> -->
+    <!-- DataUser : any;
+
+    GetAllUsers(){
+      this.api.GetListUser().subscribe( (res:any) =>{
+        this.DataUser = res['data'];
+        console.log('Data User ===>'+JSON.stringify( res['data']) );
+      });
+    } -->

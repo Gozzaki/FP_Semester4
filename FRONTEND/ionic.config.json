@@ -1,0 +1,7 @@
+{
+  "name": "E-Voting",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

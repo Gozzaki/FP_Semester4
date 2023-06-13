@@ -1,0 +1,85 @@
+<!-- <ion-header [translucent]="true"> 
+  <ion-toolbar> 
+    <ion-title>login-user</ion-title> 
+  </ion-toolbar> 
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <!-- heder di kosongkan -->
+  </ion-header>
+  <!-- ============== Menu ================== -->
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-avatar>
+          <img alt="Silhouette of a person's head" src="assets/logo/logoo.png" />
+        </ion-avatar>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div id="header">
+        <img src="assets\thumbnail.png" alt="">
+      </div>
+      <br>
+      <ion-button fill="clear"><ion-icon slot="start" name="speedometer"></ion-icon>Dashboard</ion-button><br>
+      <ion-button fill="clear" (click)="logout()"><ion-icon slot="start" name="log-out"></ion-icon>Logout</ion-button>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-avatar>
+          <img alt="foto Error" src="assets/logo/logoo.png" />
+        </ion-avatar>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+  <!-- ============== /Menu ================== -->
+  <br>
+  <br>
+  <br>
+  <!-- ============================card 1 -->
+  <br>
+  <ion-card *ngFor="let item of data; let i = index">
+    <img alt="Gambar Error" src="\assets\candidate.jpg" />
+
+    <ion-card-header>
+      <ion-card-title>Candidate {{i + 1}}</ion-card-title>
+      <ion-card-subtitle><b>{{item.name}}</b></ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button expand="block" (click)="showModal(item, i + 1)">Visi Misi</ion-button>
+      <ion-button expand="block" fill="clear" (click)="vote1(item.id)">Vote</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <!-- =============akhir card 1  -->
+  <br>
+
+  <!-- ============================ modal 2 ======================================= -->
+  <!-- <ion-button expand="block" (click)="setOpen(true)">Open</ion-button> -->
+  <!-- <ion-modal [isOpen]="isModal2Open">
+    <ng-template>
+      
+    </ng-template>
+  </ion-modal> -->
+  <!-- ================================akhir modal 1 -->
+
+<!-- ===== Alert vote 01 -->
+<!-- <ion-alert
+trigger="Paslon1"
+header="Yakin VOTE 01?"
+[buttons]="alertButtons01"></ion-alert> -->
+<!-- ===== /Alert vote 01 -->
+
+<!-- ===== Alert vote 02 -->
+<!-- <ion-alert
+trigger="Paslon2"
+header="Yakin VOTE 02?"
+[buttons]="alertButtons01"></ion-alert> -->
+<!-- ===== /Alert vote 02 -->
+</ion-content>

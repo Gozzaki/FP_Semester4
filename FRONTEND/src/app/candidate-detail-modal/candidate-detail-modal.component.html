@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Candidate </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <p>
+    <ion-card >
+      <img alt="Silhouette of mountains" src="\assets\candidate.jpg"/>
+  
+      <ion-card-header>
+        <ion-card-subtitle><b>{{data.name}}</b></ion-card-subtitle>
+        <ion-card-title>Candidate {{index}}</ion-card-title>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <h1>Visi :</h1>
+        <p>{{data.vision}}</p>
+        <br>
+        <h1>Misi :</h1>
+        <p>{{data.mission}}</p>
+      </ion-card-content>
+    </ion-card>
+  </p>
+</ion-content>

@@ -1,0 +1,77 @@
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <!-- heder di kosongkan -->
+    </ion-header>
+    <!-- ============== Menu ================== -->
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-avatar>
+            <img class="img" alt="Silhouette of a person's head" src="assets/logo/logoo.png" />
+          </ion-avatar>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content class="ion-padding">
+        <div id="header">
+          <img src="assets\thumb admin.png" alt="">
+        </div>
+        <ion-button fill="clear" (click)="toHome()"><ion-icon slot="start" name="speedometer"></ion-icon>Dasboard</ion-button><br>
+        <ion-button fill="clear" (click)="toPageAddCandidate()"><ion-icon slot="start" name="people"></ion-icon>Data Kandidat</ion-button><br>
+        <ion-button fill="clear" ><ion-icon slot="start" name="person"></ion-icon>Data User</ion-button><br>
+        <ion-button fill="clear" (click)="toPageHasilVote()"><ion-icon slot="start" name="newspaper"></ion-icon>Hasil Voting</ion-button><br>
+        <ion-button fill="clear" (click)="logout()"><ion-icon slot="start" name="log-out"></ion-icon>Logout</ion-button>
+    
+      </ion-content>
+    </ion-menu>
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="assets/logo/logoo.png" />
+          </ion-avatar>
+        </ion-toolbar>
+      </ion-header>
+    
+    </div>
+    <br><br><br>
+    <!-- ====/menu -->
+    <br>
+  <div id="container">
+    <ion-card >
+      <ion-card-header>
+        <ion-card-title><h2><b> Daftar User </b></h2></ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content >
+        <ion-list>    
+          <ion-item>
+            <ion-label>
+             <b> Nama</b> 
+            </ion-label>
+            <ion-label>
+             <b> NIS </b>
+            </ion-label>
+          </ion-item>
+          <ion-item *ngFor="let a of DataUser">
+            <ion-label> {{a.nama}} <br> </ion-label> 
+            <ion-label>{{a.nis}}</ion-label>
+            <ion-button expand="block" (click)="toPageEdit(a.id)">Edit</ion-button>
+            <ion-button expand="block" color="danger" (click)="hapus(a.id)">Hapus</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+  <!-- ===== Button Crud -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button size="small">
+      <ion-icon name="add" (click)="TambahUser()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>

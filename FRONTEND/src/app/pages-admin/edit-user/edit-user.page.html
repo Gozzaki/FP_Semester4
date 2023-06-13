@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-item color="primary">
+    <ion-label>Edit Akun User</ion-label>
+    <ion-button (click)="kembali()">
+      <ion-icon slot="icon-only" name="close-sharp"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Edit Akun User</ion-card-title>
+      <!-- <ion-card-subtitle>EDIT</ion-card-subtitle> -->
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-input label="Nama" [(ngModel)]="form.nama" [ngModelOptions]="{standalone: true}" label-placement="floating"
+        fill="outline" placeholder="Masukkan Nama"></ion-input>
+      <br>
+      <ion-input label="NIS" type="number" [(ngModel)]="form.nis" [ngModelOptions]="{standalone: true}" label-placement="floating"
+        fill="outline" placeholder="Masukkan NIS"></ion-input>
+      <br>
+      <ion-input value="password" label="Password" [(ngModel)]="form.password"
+        [ngModelOptions]="{standalone: true}" label-placement="floating" fill="outline"
+        placeholder="Password"></ion-input>
+        <br>
+        <ion-button fill="clear" expand="block" (click)="editPaslon()">Submit</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

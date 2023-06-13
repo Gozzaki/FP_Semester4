@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <!-- heder di kosongkan -->
+  </ion-header>
+  <!-- ============== Menu ================== -->
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-avatar>
+          <img class="img" alt="Silhouette of a person's head" src="assets/logo/logoo.png" />
+        </ion-avatar>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content class="ion-padding">
+      <div id="header">
+        <img src="assets\thumb admin.png" alt="">
+      </div>
+      <ion-button fill="clear" (click)="toPageHome"><ion-icon slot="start" name="speedometer"></ion-icon>Dasboard</ion-button><br>
+      <ion-button fill="clear"(click)="toPageAddCandidate()"><ion-icon slot="start" name="people"></ion-icon>Data Kandidat</ion-button><br>
+      <ion-button fill="clear" (click)="toPageAddUser()"><ion-icon slot="start" name="person"></ion-icon>Data User</ion-button><br>
+      <ion-button fill="clear" (click)="toPageHasilVote()"><ion-icon slot="start" name="newspaper"></ion-icon>Hasil Voting</ion-button><br>
+      <ion-button fill="clear"  (click)="logout()"><ion-icon slot="start"  name="log-out"></ion-icon>Logout</ion-button>
+  
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-avatar>
+          <img alt="Silhouette of a person's head" src="assets/logo/logoo.png" />
+        </ion-avatar>
+      </ion-toolbar>
+    </ion-header>
+  
+  </div>
+  <br><br><br>
+  <!-- ====/menu -->
+    <img alt="Silhouette of a person's head" src="assets\logo\admin.png" />
+
+</ion-content>
